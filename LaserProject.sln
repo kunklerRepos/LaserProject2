@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LaserProject.Server", "LaserProject.Server\LaserProject.Server.csproj", "{A3A3ABF3-2484-4DF2-97D3-0D74A7BFAD93}"
-EndProject
-Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "laserproject.client", "laserproject.client\laserproject.client.esproj", "{DF5E4257-96AF-495A-A007-741AB8D7C807}"
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "dist", "..\dist\dist.esproj", "{27F57173-E160-4ABF-BDEB-744F620E65F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,16 +11,12 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A3A3ABF3-2484-4DF2-97D3-0D74A7BFAD93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A3A3ABF3-2484-4DF2-97D3-0D74A7BFAD93}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A3A3ABF3-2484-4DF2-97D3-0D74A7BFAD93}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A3A3ABF3-2484-4DF2-97D3-0D74A7BFAD93}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DF5E4257-96AF-495A-A007-741AB8D7C807}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DF5E4257-96AF-495A-A007-741AB8D7C807}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DF5E4257-96AF-495A-A007-741AB8D7C807}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{DF5E4257-96AF-495A-A007-741AB8D7C807}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DF5E4257-96AF-495A-A007-741AB8D7C807}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DF5E4257-96AF-495A-A007-741AB8D7C807}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{27F57173-E160-4ABF-BDEB-744F620E65F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27F57173-E160-4ABF-BDEB-744F620E65F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27F57173-E160-4ABF-BDEB-744F620E65F2}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{27F57173-E160-4ABF-BDEB-744F620E65F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27F57173-E160-4ABF-BDEB-744F620E65F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27F57173-E160-4ABF-BDEB-744F620E65F2}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
