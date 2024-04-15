@@ -3,8 +3,10 @@ import { Route, Routes } from 'react-router-dom';
 import AppRoutes from './AppRoutes.jsx';
 import Layout from './components/Layout.jsx';
 import './App.css';
+import Home from './components/Home.jsx';
 
 function App() {
+
     return (
         <Layout>
             <Routes>

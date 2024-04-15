@@ -4,7 +4,7 @@ import  Home  from "./components/Home.jsx";
 
 const AppRoutes = [
     {
-        index: true,
+        path: '/LaserProject2',
         element: <Home />
     },
     {

@@ -5,14 +5,14 @@ import { BrowserRouter } from 'react-router-dom'
 import App from './App.jsx'
 import './index.css'
 
-const baseUrl = document.getElementsByTagName('base')[0].getAttribute('href');
-
+//const baseUrl = document.getElementsByTagName('base')[0].getAttribute('href') + "/LaserProject2";
+//console.log(baseUrl);
 /*<React.StrictMode>
     <App />
   </React.StrictMode>,*/
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <BrowserRouter basename={baseUrl}>
+    <BrowserRouter>
     <App />
     </BrowserRouter>
 )
