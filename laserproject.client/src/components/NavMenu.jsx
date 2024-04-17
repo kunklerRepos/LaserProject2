@@ -24,11 +24,18 @@ function NavMenu()
                         <NavItem>
                             <NavLink tag={Link} className="text-dark" to="/LaserProject2">Home</NavLink>
                         </NavItem>
+                        
                         <NavItem>
-                            <NavLink tag={Link} className="text-dark" to="/counter">Counter</NavLink>
+                            <NavLink tag={Link} className="text-dark" to="/MachineCosts">Machine Costs</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink tag={Link} className="text-dark" to="/fetch-data">Fetch data</NavLink>
+                            <NavLink tag={Link} className="text-dark" to="/Materials">Materials</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink tag={Link} className="text-dark" to="/LaborCost">Labor Costs</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink tag={Link} className="text-dark" to="/Shipping">Shipping</NavLink>
                         </NavItem>
                     </ul>
                 </Collapse>
