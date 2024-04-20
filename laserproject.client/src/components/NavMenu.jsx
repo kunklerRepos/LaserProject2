@@ -16,26 +16,26 @@ function NavMenu()
 
     return (
         <header>
-            <Navbar className="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3" container light>
+            <Navbar className="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3 circle" container light>
                 <NavbarBrand tag={Link} to="/">Laser Pricing Project</NavbarBrand>
                 <NavbarToggler onClick={toggle} className="mr-2" />
                 <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!toggleNavBar} navbar>
                     <ul className="navbar-nav flex-grow">
                         <NavItem>
-                            <NavLink tag={Link} className="text-dark" to="/LaserProject2">Home</NavLink>
+                            <NavLink tag={Link}  to="/LaserProject2">Home</NavLink>
                         </NavItem>
                         
                         <NavItem>
-                            <NavLink tag={Link} className="text-dark" to="/MachineCosts">Machine Costs</NavLink>
+                            <NavLink tag={Link} to="/MachineCosts">Machine Costs</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink tag={Link} className="text-dark" to="/Materials">Materials</NavLink>
+                            <NavLink tag={Link} to="/Materials">Materials</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink tag={Link} className="text-dark" to="/LaborCost">Labor Costs</NavLink>
+                            <NavLink tag={Link} to="/LaborCost">Labor Costs</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink tag={Link} className="text-dark" to="/Shipping">Shipping</NavLink>
+                            <NavLink tag={Link} to="/Shipping">Shipping</NavLink>
                         </NavItem>
                     </ul>
                 </Collapse>
