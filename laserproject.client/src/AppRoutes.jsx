@@ -1,6 +1,7 @@
 import Counter  from "./components/Counter.jsx";
 import FetchData  from "./components/FetchData.jsx";
 import Home from "./components/Home.jsx";
+import ItemInput from "./components/ItemInput.jsx";
 import LaborCost from "./components/LaborCost.jsx";
 import MachineCosts from './components/MachineCosts';
 import Materials from './components/Materials';
@@ -36,6 +37,11 @@ const AppRoutes = [
     {
         path: '/Shipping',
         element: <Shipping/>
+    },
+    {
+        path: '/ItemInput',
+        element: <ItemInput/>
+
     }
 ];
 
