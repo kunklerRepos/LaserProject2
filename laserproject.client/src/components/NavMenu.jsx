@@ -37,6 +37,12 @@ function NavMenu()
                         <NavItem>
                             <NavLink tag={Link} to="/Shipping">Shipping</NavLink>
                         </NavItem>
+                        <NavItem>
+                            <NavLink tag={Link} to="/Marketing">Marketing</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink tag={Link} to="/ShopFees">Shop Fees</NavLink>
+                        </NavItem>
                     </ul>
                 </Collapse>
             </Navbar>

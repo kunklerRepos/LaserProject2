@@ -6,6 +6,8 @@ import LaborCost from "./components/LaborCost.jsx";
 import MachineCosts from './components/MachineCosts';
 import Materials from './components/Materials';
 import Shipping from './components/Shipping';
+import Marketing from "./components/Marketing.jsx";
+import ShopFees from "./components/ShopFees.jsx";
 
 
 const AppRoutes = [
@@ -42,6 +44,14 @@ const AppRoutes = [
         path: '/ItemInput',
         element: <ItemInput/>
 
+    },
+    {
+        path: "/Marketing",
+        element: <Marketing/>
+    },
+    {
+        path: "/ShopFees",
+        element: <ShopFees/>
     }
 ];
 
