@@ -8,6 +8,8 @@ import Materials from './components/Materials';
 import Shipping from './components/Shipping';
 import Marketing from "./components/Marketing.jsx";
 import ShopFees from "./components/ShopFees.jsx";
+import NewJob from "./components/NewJob.jsx";
+import JobMenu from "./components/JobMenu.jsx";
 
 
 const AppRoutes = [
@@ -52,6 +54,14 @@ const AppRoutes = [
     {
         path: "/ShopFees",
         element: <ShopFees/>
+    },
+    {
+        path: "/NewJob",
+        element: <NewJob/>
+    },
+    {
+        path: "/JobMenu",
+        element: <JobMenu/>
     }
 ];
 
