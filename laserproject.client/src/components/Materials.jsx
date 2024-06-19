@@ -1,36 +1,21 @@
 import React, { Fragment, useState } from 'react';
 import ItemInput from './ItemInput';
+import { useNavigate } from 'react-router-dom';
 import './styles/Materials.component.css';
+import NewEntryComponent from './NewEntryComponent';
 
 function Materials()
 {
+    const navigate = useNavigate();
+
+    const goToAddMaterials = () => { navigate("/NewEntryComponent", { state: { "EntryType": "Materials" } }) }
+
     const MaterialObject = {
         "Material #1": "7.50",
         "Material #2": "5.50",
         "Material #3": "3.50"
 
     };
-
-    /**<tr>
-                        <td scope="row">1</td>
-                        <td colspan="2" >Material #1</td>
-                        <td>$7.50</td>
-                            <td><a href="#"><i className="fa fa-trash-o"></i></a></td>
-                    </tr>
-                        <tr>
-                            <td scope="row">2</td>
-                            <td colspan="2">Material #2</td>
-                            <td>$5.50</td>
-                            <td><a href="#"><i className="fa fa-trash-o"></i></a></td>
-                    </tr>
-                        <tr>
-
-                            <td scope="row">3</td>
-                            <td colspan="2">Material #3</td>
-                            <td>$3.50</td>
-                            <td><a href="#"><i className="fa fa-trash-o"></i></a></td>
-                    </tr>*/
-
 
 
     return (
@@ -44,7 +29,7 @@ function Materials()
                             <th scope="col">#</th>
                             <th scope="col" colspan="2" >Material</th>
                             <th scope="col" >Unit Cost</th>
-                            <th scope="col" > <a style={{ marginLeft: '2%' }} className="w3-button w3-small w3-circle w3-small w3-ripple w3-teal" href="#" >+</a> </th>
+                            <th scope="col" > <a style={{ marginLeft: '2%' }} onClick={() => goToAddMaterials()} className="w3-button w3-small w3-circle w3-small w3-ripple w3-teal">+</a> </th>
                         </tr>
                     </thead>
                     <tbody>

@@ -7,6 +7,7 @@ function NewJob()
 
     const backToHome = () => { navigate("/LaserProject2") }
     const toJobMenu = () => { navigate("/JobMenu") }
+
     return (
         <>
             <h2>New Job</h2>

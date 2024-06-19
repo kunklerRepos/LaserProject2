@@ -10,7 +10,9 @@ import Marketing from "./components/Marketing.jsx";
 import ShopFees from "./components/ShopFees.jsx";
 import NewJob from "./components/NewJob.jsx";
 import JobMenu from "./components/JobMenu.jsx";
-
+import CurrentOrders from "./components/CurrentOrders.jsx";
+import OrderHistory from "./components/OrderHistory.jsx";
+import NewEntryComponent from "./components/NewEntryComponent.jsx";
 
 const AppRoutes = [
     {
@@ -62,6 +64,18 @@ const AppRoutes = [
     {
         path: "/JobMenu",
         element: <JobMenu/>
+    },
+    {
+        path: "/CurrentOrders",
+        element: <CurrentOrders/>
+    },
+    {
+        path: "/OrderHistory",
+        element: <OrderHistory/>
+    },
+    {
+        path: "/NewEntryComponent",
+        element: <NewEntryComponent/>
     }
 ];
 
