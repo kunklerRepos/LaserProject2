@@ -13,6 +13,9 @@ import JobMenu from "./components/JobMenu.jsx";
 import CurrentOrders from "./components/CurrentOrders.jsx";
 import OrderHistory from "./components/OrderHistory.jsx";
 import NewEntryComponent from "./components/NewEntryComponent.jsx";
+import AddShopFee from "./components/AddShopFee.jsx";
+import AddMachiningCosts from "./components/AddMachiningCosts.jsx";
+import AddLaborCosts from "./components/AddLaborCosts.jsx";
 
 const AppRoutes = [
     {
@@ -76,6 +79,18 @@ const AppRoutes = [
     {
         path: "/NewEntryComponent",
         element: <NewEntryComponent/>
+    },
+    {
+        path: "/AddShopFee",
+        element: <AddShopFee/>
+    },
+    {
+        path: "/AddMachiningCosts",
+        element: <AddMachiningCosts/>
+    },
+    {
+        path: "/AddLaborCosts",
+        element: <AddLaborCosts/>
     }
 ];
 

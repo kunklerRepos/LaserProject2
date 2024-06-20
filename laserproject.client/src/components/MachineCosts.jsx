@@ -1,10 +1,33 @@
 import React, { Fragment, useState } from 'react';
-
+import { useLocation, useNavigate } from 'react-router-dom';
 
 function MachineCosts()
 {
+    const navigate = useNavigate();
+
+    const goToAddMachineCost = () => { navigate("/AddMachiningCosts") }
 
     const MachiningCosts = { "Laser Operating Cost": "0.11" };
+
+    const location = useLocation();
+
+    if (location.state)
+    {
+        console.log(location);
+        MachiningCosts[location.state.name] = location.state.costkWh;
+    }
+
+
+    const [machineCost, setMachineCost] = useState(MachiningCosts);
+
+    console.log(machineCost);
+    const removeItems = (value, e) => {
+        let copiedMachingCosts = { ...machineCost };
+        delete copiedMachingCosts[value];
+        setMachineCost(machineCost => ({
+            ...copiedMachingCosts
+        }));
+    }
 
 
     return (
@@ -15,28 +38,26 @@ function MachineCosts()
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col" colspan="2" >Cost Type</th>
+                        <th scope="col" colSpan="2">Cost Type</th>
                         <th scope="col" >Electric Cost</th>
-                        <th scope="col" > <a style={{ marginLeft: '2%' }} className="w3-button w3-small w3-circle w3-small w3-ripple w3-teal" href="#" >+</a> </th>
+                        <th scope="col" > <a onClick={() => goToAddMachineCost()} style={{ marginLeft: '2%' }} className="w3-button w3-small w3-circle w3-small w3-ripple w3-teal" >+</a> </th>
                     </tr>
                 </thead>
                 <tbody>
-                    {Object.keys(MachiningCosts).map((item, index) => {
+                    {Object.keys(machineCost).map((item, index) => {
                         return (
                             <Fragment>
-                                <tr>
+                                <tr key={index}>
                                     <td scope="row">{index + 1}</td>
-                                    <td colspan="2">{item}</td>
-                                    <td>{`$${MachiningCosts[item]}`}</td>
-                                    <td><a href="#"><i className="fa fa-trash-o"></i></a></td>
+                                    <td colSpan="2">{item}</td>
+                                    <td>{`$${machineCost[item]}`}</td>
+                                    <td><a onClick={(e) => removeItems(item, e)}><i className="fa fa-trash-o"></i></a></td>
                                 </tr>
 
                             </Fragment>
                         )
 
                     })}
-
-
 
                 </tbody>
             </table>

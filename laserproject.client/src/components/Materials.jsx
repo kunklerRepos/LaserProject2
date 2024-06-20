@@ -1,12 +1,14 @@
 import React, { Fragment, useState } from 'react';
 import ItemInput from './ItemInput';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import './styles/Materials.component.css';
-import NewEntryComponent from './NewEntryComponent';
 
 function Materials()
 {
+
+
     const navigate = useNavigate();
+    const location = useLocation();
 
     const goToAddMaterials = () => { navigate("/NewEntryComponent", { state: { "EntryType": "Materials" } }) }
 
@@ -16,6 +18,25 @@ function Materials()
         "Material #3": "3.50"
 
     };
+
+    if (location.state)
+    {
+        MaterialObject[location.state.name] = location.state.costPiece;
+    }
+
+
+
+    const [material, setMaterial] = useState(MaterialObject);
+
+    const removeItem = (value, e) => {
+        console.log(value);
+        let copiedMaterials = { ...material };
+        delete copiedMaterials[value];
+        setMaterial(material => ({
+            ...copiedMaterials
+
+        }));
+    }
 
 
     return (
@@ -27,20 +48,20 @@ function Materials()
                     <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col" colspan="2" >Material</th>
+                            <th scope="col" colSpan="2" >Material</th>
                             <th scope="col" >Unit Cost</th>
                             <th scope="col" > <a style={{ marginLeft: '2%' }} onClick={() => goToAddMaterials()} className="w3-button w3-small w3-circle w3-small w3-ripple w3-teal">+</a> </th>
                         </tr>
                     </thead>
                     <tbody>
-                        {Object.keys(MaterialObject).map((item, index) => {
+                        {Object.keys(material).map((item, index) => {
                             return (
                                 <Fragment>
-                                    <tr>
+                                    <tr key={index}>
                                         <td scope="row">{index + 1}</td>
-                                        <td colspan="2">{item}</td>
-                                        <td>{`$${MaterialObject[item]}`}</td>
-                                        <td><a href="#"><i className="fa fa-trash-o"></i></a></td>
+                                        <td colSpan="2">{item}</td>
+                                        <td>{`$${material[item]}`}</td>
+                                        <td><a onClick={(e) => removeItem(item, e) }><i className="fa fa-trash-o"></i></a></td>
                                     </tr>
 
                                 </Fragment>
