@@ -34,21 +34,21 @@ function AddMachiningCosts()
                 <label htmlFor="name" className="form-label">Name</label>
             </div>
             <div className="d-flex justify-content-center" style={{ display: "flex" }}>
-                <input onChange={(e) => setName(e.currentTarget.value)} type="text" name="name" id="name" label="Name" className="form-control" style={{ width: "50%" }} />
+                <input placeholder={ location.state.name ? location.state.name : ""} onChange={(e) => setName(e.currentTarget.value)} type="text" name="name" id="name" label="Name" className="form-control" style={{ width: "50%" }} />
             </div>
             <br></br>
             <div className="d-flex justify-content-center" style={{ display: "flex" }}>
                 <label htmlFor="costkWh" className="form-label">Electric Cost per kWh</label>
             </div>
             <div className="d-flex justify-content-center" style={{ display: "flex" }}>
-                <input onChange={(e) => setCostkWh(e.currentTarget.value)} style={{ width: "50%" }} min="0.01" step="0.01" type="number" id="costkWh" name="costkWh" label="costkWh" className="form-control" />
+                <input placeholder={ location.state.name ? location.state.entity[0] : ""} onChange={(e) => setCostkWh(e.currentTarget.value)} style={{ width: "50%" }} min="0.01" step="0.01" type="number" id="costkWh" name="costkWh" label="costkWh" className="form-control" />
             </div>
 
             <div className="d-flex justify-content-center" style={{ display: "flex" }}>
                 <label htmlFor="maxPower" className="form-label">Max Power Consumption</label>
             </div>
             <div className="d-flex justify-content-center" style={{ display: "flex" }}>
-                <input onChange={(e) => setMaxPower(e.currentTarget.value)} name="maxPower" id="maxPower" label="maxPower" type="number" min="0.01" step="0.01" className="form-control" style={{ width: "50%" }} />
+                <input placeholder={ location.state.name ? location.state.entity[1] : "" } onChange={(e) => setMaxPower(e.currentTarget.value)} name="maxPower" id="maxPower" label="maxPower" type="number" min="0.01" step="0.01" className="form-control" style={{ width: "50%" }} />
             </div>
 
             <div className="d-flex justify-content-center" style={{ display: "flex" }}>
@@ -56,7 +56,7 @@ function AddMachiningCosts()
             </div>
 
             <div className="d-flex justify-content-center" style={{ display: "flex" }}>
-                <input style={{ width: "50%" }} onChange={(e) => setHourlyRate(e.currentTarget.value)} className="form-control" type="number" id="hourlyRate" name="hourlyRate" label="hourlyRate" min="0.00" step="0.01" />
+                <input placeholder={location.state.name ? location.state.entity[2] : "" } style={{ width: "50%" }} onChange={(e) => setHourlyRate(e.currentTarget.value)} className="form-control" type="number" id="hourlyRate" name="hourlyRate" label="hourlyRate" min="0.00" step="0.01" />
             </div>
 
             <div className="d-flex justify-content-center" style={{ display: "flex" }}>
@@ -64,7 +64,7 @@ function AddMachiningCosts()
             </div>
 
             <div className="d-flex justify-content-center" style={{ display: "flex" }}>
-                <input style={{ width: "50%" }} onChange={(e) => setNumHours(e.currentTarget.value)} className="form-control" type="number" id="numHours" name="numHours" label="numHours" min="0.00" step="0.5" />
+                <input placeholder={ location.state.name ? location.state.entity[3] : ""}  style={{ width: "50%" }} onChange={(e) => setNumHours(e.currentTarget.value)} className="form-control" type="number" id="numHours" name="numHours" label="numHours" min="0.00" step="0.5" />
             </div>
 
             <br />

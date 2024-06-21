@@ -9,7 +9,12 @@ function Shipping()
 
     const goToAddShipping = () => { navigate("/NewEntryComponent", { state: { "EntryType": "Shipping Material" } }) };
 
-    const ShippingObj = {"Item 1": "5.00", "Item 2": "3.00"};
+    const ShippingObj = {
+        "Item 1": ["5.00", "10.00", "0.75"],
+        "Item 2": ["3.00", "5.00", "0.50"]
+    };
+
+    const goToEditShipping = (item) => { navigate("/NewEntryComponent", { state: { "EntryType": "Shipping Material", "name": item, "entity": shipping[item] }}) }
 
     if (location.state)
     {
@@ -46,10 +51,10 @@ function Shipping()
                     {Object.keys(shipping).map((item, index) => {
                         return (
                             <Fragment>
-                                <tr key={index }>
-                                    <td scope="row">{index + 1}</td>
-                                    <td colspan="2">{item}</td>
-                                    <td>{`$${shipping[item]}`}</td>
+                                <tr key={index}>
+                                    <td onClick={() => goToEditShipping(item)} scope="row">{index + 1}</td>
+                                    <td onClick={() => goToEditShipping(item)} colspan="2">{item}</td>
+                                    <td onClick={() => goToEditShipping(item)}>{`$${shipping[item][0]}`}</td>
                                     <td><a onClick={(e) => removeItem(item, e)}><i className="fa fa-trash-o"></i></a></td>
                                 </tr>
 

@@ -5,10 +5,6 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 function NewEntryComponent()
 {
-    const [name, setName] = useState();
-    const [costPiece, setCostPiece] = useState();
-    const [costQty, setCostQty] = useState();
-    const [tax, setTax] = useState();
     
 
     const BackNav = {
@@ -18,6 +14,12 @@ function NewEntryComponent()
 
     const location = useLocation();
     const navigation = useNavigate();
+
+    const [name, setName] = useState(location.state.name);
+    const [costPiece, setCostPiece] = useState(location.state.entity[0]);
+    const [costQty, setCostQty] = useState(location.state.entity[1]);
+    const [tax, setTax] = useState(location.state.entity[2]);
+
 
     const navigateBack = () => { navigation(BackNav[location.state.EntryType]) };
 
@@ -32,6 +34,9 @@ function NewEntryComponent()
     }
     console.log(location);
 
+
+
+
     return (
         <>
             <h2>{location.state.EntryType}</h2>
@@ -42,7 +47,7 @@ function NewEntryComponent()
                     Name</label>
             </div>
             <div style={{ display: "flex" }} className="d-flex justify-content-center">
-                <input type="text" onChange={(e) => setName(e.currentTarget.value)} id="itemName" style={{ width: "50%" }} className="form-control" name="itemName" label="ItemName" />
+                <input type="text" placeholder={ location.state.entity ? location.state.name : ""} onChange={(e) => setName(e.currentTarget.value)} id="itemName" style={{ width: "50%" }} className="form-control" name="itemName" label="ItemName" />
             </div>
             <br />
             <div style={{ display: "flex" }} className="d-flex justify-content-center">
@@ -50,7 +55,7 @@ function NewEntryComponent()
                 Cost for Piece</label>
             </div>
             <div style={{ display: "flex" }} className="d-flex justify-content-center">
-                <input type="number" onChange={(e) => setCostPiece(e.currentTarget.value)} id="cost" style={{ width: "50%" }} className="form-control" min="0.00" step="0.01" name="cost" label="Cost" />
+                <input type="number" placeholder={ location.state.name ? location.state.entity[0] : ""} onChange={(e) => setCostPiece(e.currentTarget.value)} id="cost" style={{ width: "50%" }} className="form-control" min="0.00" step="0.01" name="cost" label="Cost" />
             </div>
 
             <br/>
@@ -59,7 +64,7 @@ function NewEntryComponent()
                 <label for="costQty" className="form-label">Cost Per Qty</label>
             </div>
             <div style={{ display: "flex" }} className="d-flex justify-content-center">
-                <input onChange={(e) => setCostQty(e.currentTarget.value)} type="number" id="costQty" className="form-control" style={{ width: "50%" }} min="0.00" step="0.01" name="costQty" label="CostQty" />
+                <input onChange={(e) => setCostQty(e.currentTarget.value)} placeholder={ location.state.name ? location.state.entity[1] : "" } type="number" id="costQty" className="form-control" style={{ width: "50%" }} min="0.00" step="0.01" name="costQty" label="CostQty" />
             </div>
 
             <br />
@@ -68,7 +73,7 @@ function NewEntryComponent()
             </div>
 
             <div style={{ display: "flex" }} className="d-flex justify-content-center">
-                <input id="taxShipping" onChange={(e) => setTax(e.currentTarget.value)} name="taxShipping" label="TaxShipping" type="number" min="0.00" step="0.01" style={{ width: "50%" }} className="form-control" />
+                <input id="taxShipping" placeholder={ location.state.name ? location.state.entity[2] : ""} onChange={(e) => setTax(e.currentTarget.value)} name="taxShipping" label="TaxShipping" type="number" min="0.00" step="0.01" style={{ width: "50%" }} className="form-control" />
             </div>
             <br/>
             <div style={{ display: "flex" }} className="d-flex justify-content-center">

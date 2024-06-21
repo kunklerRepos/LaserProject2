@@ -13,16 +13,20 @@ function Marketing()
         navigate("/NewEntryComponent", { state: {"EntryType": "Marketing"}})
     }
 
+    const goToEditMarketing = (item) => {
+        navigate("/NewEntryComponent", { state: { "EntryType": "Marketing", "name": item, "entity": marketing[item] } })
+    }
+
     const MarketingObj = {
-        "Item 1": "0.50",
-        "Item 2": "1.00",
-        "Item 3": "0.75"
+        "Item 1": ["0.50", "5.00","0.14"],
+        "Item 2": ["1.00", "3.50", "1.20"],
+        "Item 3": ["0.75", "8.43", "3.23"]
 
     };
 
     if (location.state)
     {
-        MarketingObj[location.state.name] = location.state.costPiece;
+        MarketingObj[location.state.name] = [location.state.costPiece, location.state.costQty, location.state.tax];
     }
 
     const [marketing, setMarketing] = useState(MarketingObj);
@@ -56,10 +60,10 @@ function Marketing()
                     {Object.keys(marketing).map((item, index) => {
                         return (
                             <Fragment>
-                                <tr>
-                                    <td scope="row">{index + 1}</td>
-                                    <td colspan="2">{item}</td>
-                                    <td>{`$${marketing[item]}`}</td>
+                                <tr >
+                                    <td onClick={() => goToEditMarketing(item)} scope="row">{index + 1}</td>
+                                    <td onClick={() => goToEditMarketing(item)}  colspan="2">{item}</td>
+                                    <td onClick={() => goToEditMarketing(item)} >{`$${marketing[item][0]}`}</td>
                                     <td><a onClick={(e) => removeItems(item, e) }><i className="fa fa-trash-o"></i></a></td>
                                 </tr>
 

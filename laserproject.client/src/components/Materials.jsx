@@ -11,11 +11,13 @@ function Materials()
     const location = useLocation();
 
     const goToAddMaterials = () => { navigate("/NewEntryComponent", { state: { "EntryType": "Materials" } }) }
+    const goToEditingMaterials = (item) => { navigate("/NewEntryComponent", { state: { "EntryType": "Materials", "name": item, "entity": material[item] } })}
+
 
     const MaterialObject = {
-        "Material #1": "7.50",
-        "Material #2": "5.50",
-        "Material #3": "3.50"
+        "Material #1": ["7.50", "10.10", "0.15"],
+        "Material #2": ["5.50", "8.50", "0.06"],
+        "Material #3": ["3.50", "5.50", "0.14"]
 
     };
 
@@ -58,9 +60,9 @@ function Materials()
                             return (
                                 <Fragment>
                                     <tr key={index}>
-                                        <td scope="row">{index + 1}</td>
-                                        <td colSpan="2">{item}</td>
-                                        <td>{`$${material[item]}`}</td>
+                                        <td onClick={() => goToEditingMaterials(item)} scope="row">{index + 1}</td>
+                                        <td onClick={() => goToEditingMaterials(item)} colSpan="2">{item}</td>
+                                        <td onClick={() => goToEditingMaterials(item)}>{`$${material[item][0]}`}</td>
                                         <td><a onClick={(e) => removeItem(item, e) }><i className="fa fa-trash-o"></i></a></td>
                                     </tr>
 

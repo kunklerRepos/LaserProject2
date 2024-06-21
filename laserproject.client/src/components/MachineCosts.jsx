@@ -7,7 +7,18 @@ function MachineCosts()
 
     const goToAddMachineCost = () => { navigate("/AddMachiningCosts") }
 
-    const MachiningCosts = { "Laser Operating Cost": "0.11" };
+    const goToEditMachineCost = (item) => {
+        navigate("/AddMachiningCosts", {
+            state: {
+                "name": item,
+                "entity": machineCost[item]
+            }
+        })
+    }
+
+    const MachiningCosts = {
+        "Laser Operating Cost": ["0.11", "0.03", "14.00", "3"]
+    };
 
     const location = useLocation();
 
@@ -48,9 +59,9 @@ function MachineCosts()
                         return (
                             <Fragment>
                                 <tr key={index}>
-                                    <td scope="row">{index + 1}</td>
-                                    <td colSpan="2">{item}</td>
-                                    <td>{`$${machineCost[item]}`}</td>
+                                    <td onClick={() => goToEditMachineCost(item)} scope="row">{index + 1}</td>
+                                    <td onClick={() => goToEditMachineCost(item)} colSpan="2">{item}</td>
+                                    <td onClick={() => goToEditMachineCost(item) }>{`$${machineCost[item][0]}`}</td>
                                     <td><a onClick={(e) => removeItems(item, e)}><i className="fa fa-trash-o"></i></a></td>
                                 </tr>
 
