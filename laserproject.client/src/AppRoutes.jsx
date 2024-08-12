@@ -16,6 +16,11 @@ import NewEntryComponent from "./components/NewEntryComponent.jsx";
 import AddShopFee from "./components/AddShopFee.jsx";
 import AddMachiningCosts from "./components/AddMachiningCosts.jsx";
 import AddLaborCosts from "./components/AddLaborCosts.jsx";
+import PhotoUploader from "./components/PhotoUploader.jsx";
+import FeedbackProofs from "./components/FeedbackProofs.jsx";
+import SelectMaterial from "./components/SelectMaterials.jsx";
+import SelectMarketing from "./components/SelectMarketing.jsx";
+import SelectAdditionalCosts from "./components/SelectAdditionalCosts.jsx";
 
 const AppRoutes = [
     {
@@ -91,6 +96,26 @@ const AppRoutes = [
     {
         path: "/AddLaborCosts",
         element: <AddLaborCosts/>
+    },
+    {
+        path: "/PhotoUploader",
+        element: <PhotoUploader />
+    },
+    {
+        path: "/FeedbackProofs",
+        element: <FeedbackProofs/>
+    },
+    {
+        path: "/SelectMaterials",
+        element: <SelectMaterial/>
+    },
+    {
+        path: "/SelectMarketing",
+        element: <SelectMarketing/>
+    },
+    {
+        path: "/SelectAdditionalCosts",
+        element: <SelectAdditionalCosts/>
     }
 ];
 
